@@ -1,0 +1,58 @@
+.dashboard {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+h2 {
+  color: #4a4a4a;
+}
+
+.dreams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dream {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dream h3 {
+  margin: 0;
+  color: #4a4a4a;
+}
+
+.dream p {
+  color: #333;
+  margin: 0.5rem 0 1rem;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+button:nth-of-type(1) {
+  background-color: #007bff;
+}
+
+button:nth-of-type(2) {
+  background-color: #dc3545;
+  margin-left: 0.5rem;
+}
