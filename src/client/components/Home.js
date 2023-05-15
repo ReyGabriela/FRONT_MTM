@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { DreamContext } from '../../DreamContext';
 import './Home.css';
+import Header from './Header';
 
 const Home = () => {
   const [dreams] = useContext(DreamContext);
+  
 
   return (
     <div className="page-container">
+      <Header />
       <header>
         <h1>Listado de Pacientes</h1>
       </header>
