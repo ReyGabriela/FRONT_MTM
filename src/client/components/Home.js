@@ -1,53 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DreamContext } from '../../DreamContext';
 import './Home.css';
 
 const Home = () => {
-  // Datos de ejemplo para la lista de pacientes
-  const patients = [
-    {
-      id: 1,
-      name: 'Niño 1',
-      status: 'Sueño cumplido',
-      eps: 'EPS1',
-      age: 8,
-      city: 'Bogotá',
-    },
-    {
-      id: 2,
-      name: 'Niño 2',
-      status: 'Sueño pendiente',
-      eps: 'EPS2',
-      age: 6,
-      city: 'Medellín',
-    },
-    // ... más pacientes aquí
-  ];
+  const [dreams] = useContext(DreamContext);
 
   return (
-    <div>
-      <h1>Listado de Pacientes</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre del Niño</th>
-            <th>Estado del Sueño</th>
-            <th>EPS</th>
-            <th>Edad del Niño</th>
-            <th>Ciudad de Residencia</th>
-          </tr>
-        </thead>
-        <tbody>
-          {patients.map((patient) => (
-            <tr key={patient.id}>
-              <td>{patient.name}</td>
-              <td>{patient.status}</td>
-              <td>{patient.eps}</td>
-              <td>{patient.age}</td>
-              <td>{patient.city}</td>
-            </tr>
+    <div className="page-container">
+      <header>
+        <h1>Listado de Pacientes</h1>
+      </header>
+
+      <div className="table-container">
+        <div className="grid-table">
+          <div className="grid-row header">
+            <div>Nombre del Niño</div>
+            <div>Estado del Sueño</div>
+            <div>EPS</div>
+            <div>Edad del Niño</div>
+            <div>Ciudad de Residencia</div>
+          </div>
+
+          {dreams.map((dream) => (
+            <div key={dream.id} className="grid-row">
+              <div className="child-data">
+                <img className="child-image" src={dream.imageUrl} alt={`${dream.childName}'s dream`} />
+                <div>{dream.childName}</div>
+              </div>
+              <div className={`status ${dream.status}`}>{dream.status === 'active' ? 'Activo' : 'No Activo'}</div>
+              <div>{dream.eps}</div>
+              <div>{dream.age}</div>
+              <div>{dream.city}</div>
+            </div>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,40 +1,76 @@
-/* en src/components/Home.css */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #eaf6ff;
-  }
-  
-  
+.page-container {
+  margin: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-table {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+}
+
+.grid-row.header {
+  font-weight: bold;
+  background-color: #e0e0e0;
+}
+
+.child-data {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.child-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.status {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.status::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status.active::before {
+  background-color: green;
+}
+
+.status.inactive::before {
+  background-color: darkmagenta;
+}
